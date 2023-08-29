@@ -2,8 +2,10 @@ package com.zm.controller;
 
 
 import com.zm.mapper.AdministratorMapper;
+import com.zm.mapper.ConsultationMapper;
 import com.zm.mapper.DelegatorMapper;
 import com.zm.pojo.Administrator;
+import com.zm.pojo.Consultation;
 import com.zm.pojo.Delegator;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,26 @@ public class AdminController {
     @Autowired
     private DelegatorMapper delegatorMapper;
 
+    @Autowired
+    private ConsultationMapper consultationMapper;
+
     //登录认证
     @RequestMapping("/golog")
     public String login(String name,String password,String userType , Model model){
+        if(userType.equals("1")){
+            Delegator d = delegatorMapper.login(name, password);
+            model.addAttribute("delegator",d);
+            if( d != null){
+                return "cate";
+
+            }else {
+                System.out.println("失败");
+            }
+        }
+
         if(userType.equals("4")) {
             Administrator a = administratorMapper.login(name,password);
+            System.out.println(a.getAdministratorId());
             model.addAttribute("admin", a);
             if (a != null) {
                 return "logok";
@@ -44,7 +61,6 @@ public class AdminController {
         return "signUp";
     }
 
-
     //注册
     @RequestMapping("/signUp")
     public String signUp(Delegator delegator){
@@ -58,4 +74,13 @@ public class AdminController {
        }
     }
 
+    //跳转到咨询室
+    @RequestMapping("toAdvice")
+    public String toAdvice(Consultation consultation,Model model){
+        consultationMapper.addCs(consultation);
+        Consultation c = consultationMapper.selectCs(28);
+        System.out.println(c);
+        model.addAttribute("consulation",c);
+        return "advice";
+    }
 }

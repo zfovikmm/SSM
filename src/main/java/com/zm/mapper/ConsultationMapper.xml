@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zm.mapper.ConsultationMapper">
+    <select id="selectCs" resultMap="ConsulationID">
+        select * from ssm.consultation where consultation_id = #{consultationId}
+    </select>
+    <resultMap id="ConsulationID" type="consultation">
+        <id column="consultation_id" property="consultationId"></id>
+    </resultMap>
+</mapper>

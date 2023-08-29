@@ -35,7 +35,7 @@
             <input type="radio" id="woman" value="女" name="sex">女
         </p>
 
-        <input type="submit" value="添加">
+        <input type="submit" value="注册">
     </form>
 </div>
 </body>
