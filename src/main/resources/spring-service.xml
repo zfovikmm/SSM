@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--aop-->
+    <!--扫描service的包-->
+    <context:component-scan base-package="com.zm.service"/>
+
+    <!--2、将我们的所有的业务类，注入到Spring，可以通过配置或注解实现-->
+    <bean id="AdministratorServiceImpl" class="com.zm.service.AdministratorServiceImpl">
+        <property name="administratorMapper" ref="administratorMapper"/>
+    </bean>
+
+    <!--3、声明式事务配置-->
+    <bean id="TransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--4、aop事务支持-->
+
+</beans>
