@@ -21,7 +21,7 @@
                     <li <c:if test="${tab.tabNameEn == 'jobs'}">class="active"
                          </c:if>><a style="color: black" href="/tab/jobs">工作</a></li>
                     <li <c:if test="${tab.tabNameEn == 'deals'}">class="active"
-                        </c:if>><a style="color: black" href="/tab/deals">交易</a></li>
+                        </c:if>><a style="color: black" href="${pageContext.request.contextPath}/tomessage?delegatorID=6">消息列表</a></li>
 
                 </ul>
 

@@ -3,10 +3,31 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zm.mapper.DelegatorMapper">
+<!--    登录验证-->
     <select id="login" resultMap="getDelegatorID">
         select * from ssm.delegator where dename = #{dename} and depassword = #{depassword}
     </select>
+
     <resultMap id="getDelegatorID" type="delegator">
         <id column="delegator_id" property="delegatorId"></id>
     </resultMap>
+
+
+<!--    显示所有信息-->
+    <select id="queryAll" resultMap="getDelegatorID">
+        select * from ssm.delegator
+    </select>
+<!--    模糊查询-->
+    <select id="selectDele" resultMap="getDelegatorID">
+        select * from ssm.delegator where dename like concat('%',#{dename},'%')
+    </select>
+
+<!--    查询总条数-->
+    <select id="getAllSize" resultType="java.lang.Integer">
+        select count(*) from ssm.delegator;
+    </select>
+<!--    分页查询-->
+    <select id="getAll" resultMap="getDelegatorID" parameterType="map">
+        select * from ssm.delegator limit #{start},#{pageSize}
+    </select>
 </mapper>

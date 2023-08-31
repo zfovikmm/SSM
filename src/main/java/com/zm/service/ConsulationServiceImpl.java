@@ -2,9 +2,10 @@ package com.zm.service;
 
 import com.zm.mapper.ConsultationMapper;
 import com.zm.pojo.Consultation;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-
+@Service
 public class ConsulationServiceImpl implements ConsulationService{
 
     @Resource

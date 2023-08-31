@@ -65,19 +65,21 @@
     </ul>
 
 <ul class="list-group" style="width: 100%">
-    <c:forEach items="${topics}" var="topic">
+    <c:forEach items="${lawyers}" var="lawyer">
     <li class="list-group-item">
         <div style="height: 50px">
             <div style="float: left;width: 6%;margin-bottom: 5px">
-                <img width="50px" height="50px" src="${topic.user.avatar}" class="img-rounded">
+                <img width="50px" height="50px" src="/static/img/avatar/avatar.png" class="img-rounded">
             </div>
             <div style="width: 89%;float: left">
-                <a style="color: black;font-weight: normal;" href="/t/${topic.id}"><c:if test="${topic.isEssence==1}"><p style="color: #c9302c;display: inline">[ 精品 ]</p></c:if> ${topic.title}</a><br/>
+                <a style="color: black;font-weight: normal;"><p style="color: #c9302c;display: inline"></p>${lawyer.name}</a><br/>
                 <div>
-                    <a><span class="label label-default" >${topic.tab.tabName}</span></a>&nbsp;&nbsp;&nbsp;
-                    <a href="/member/${topic.user.username}"><span ><strong>${topic.user.username}</strong></span></a>&nbsp;&nbsp;&nbsp;
-                    <small class="text-muted">创建于: ${topic.localCreateTime}</small>
-                    <small class="text-muted" style="float: right">最新回复: ${topic.localUpdateTime}</small>
+                    <a><span class="label label-default" >${lawyer.specialization}</span></a>&nbsp;&nbsp;&nbsp;
+                    <a href="/"><span ><strong>所在地：${lawyer.address}</strong></span></a>&nbsp;&nbsp;&nbsp;
+                    <small class="text-muted">联系电话: ${lawyer.contact}</small>  &nbsp;
+                    <small class="text-muted">所处律所: ${lawyer.lawFirm}</small>  &nbsp;
+                    <small class="text-muted">从业年龄: 3年</small>
+                    <a class="text-muted" style="float: right" href="${pageContext.request.contextPath}/tonew">咨询</a>
                 </div>
             </div>
             <div style="width: 5%;float: right;text-align: center">
@@ -86,18 +88,27 @@
         </div>
     </li>
     </c:forEach>
+<%--    <c:forEach var="lawyer" items="${lawyers}">--%>
+<%--        <tr>${lawyer.name}</tr>--%>
+<%--        <tr>${lawyer.age}</tr>--%>
+<%--        <tr>${lawyer.contact}</tr>--%>
+<%--        <tr>${lawyer.address}</tr>--%>
+<%--        <tr>${lawyer.lawFirm}</tr>--%>
+<%--        <tr>${lawyer.education}</tr>--%>
+<%--        <tr>${lawyer.specialization}</tr>--%>
+<%--        <tr>${lawyer.registrationDate}</tr>--%>
 
+<%--    </c:forEach>--%>
 </ul>
-<%--</div>--%>
+</div>
 <%--<div class="pageDiv" align="center" style="display:block;">--%>
 <%--    <%@include file="../jsp/page.jsp" %>--%>
 <%--</div>--%>
-<%--</div>--%>
+</div>
 <div align="center" style="display:block;float: right;margin-right: 30px">
     <!-- 引入侧边栏文件 -->
     <%@ include file="side.jsp"%>
 </div>
-
 
 <!-- 引入footer文件 -->
 <%@ include file="footer.jsp"%>

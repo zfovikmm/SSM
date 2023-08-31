@@ -194,9 +194,8 @@
     </div>
     <select name="userType">
       <option value="1">委托人</option>
-      <option value="2">委托机构</option>
-      <option value="3">客服</option>
-      <option value="4">管理员</option>
+      <option value="2">律师</option>
+      <option value="3">管理员</option>
     </select>
     <a>
       <span></span>
