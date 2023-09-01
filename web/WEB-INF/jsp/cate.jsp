@@ -5,7 +5,7 @@
 <head>
     <meta name="Content-Type"  content="text/html;charset=utf-8">
     <meta name="keywords" content="Lhfly,论坛,社区,程序员">
-    <title>Lhfly - 一个分享创造的开发者社区  </title>
+    <title>zm - 一个免费的法律咨询平台 </title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <script src="/static/js/jquery-3.2.1.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>

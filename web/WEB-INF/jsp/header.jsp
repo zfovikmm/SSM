@@ -5,21 +5,21 @@
     <nav class="navbar navbar-default" role="navigation" style="background:linear-gradient(#f1f1f1,#c4e3f3);">
         <div class="container-fluid" style="margin-left: 10%">
             <div class="navbar-header">
-                <a class="navbar-brand" style="color: black" href="/">Lhfly</a>
+                <a class="navbar-brand" style="color: black" href="/">zm</a>
             </div>
             <div style="margin-top: 5px">
 
                 <!--向左对齐-->
                 <ul class="nav nav-pills navbar-left">
                     <li <c:if test="${tab.tabNameEn == 'tech'}">
-                            class="active" </c:if>><a style="color: black" href="/tab/tech">技术</a>
+                            class="active" </c:if>><a style="color: black" href="/tab/tech">法律法规</a>
                     </li>
                     <li <c:if test="${tab.tabNameEn == 'play'}">class="active"
-                        </c:if>><a style="color: black" href="/tab/play">好玩</a></li>
+                        </c:if>><a style="color: black" href="/tab/play">案例库</a></li>
                     <li <c:if test="${tab.tabNameEn == 'creative'}">class="active"
-                        </c:if>><a style="color: black" href="/tab/creative">创意</a></li>
+                        </c:if>><a style="color: black" href="/tab/creative">智能法律咨询</a></li>
                     <li <c:if test="${tab.tabNameEn == 'jobs'}">class="active"
-                         </c:if>><a style="color: black" href="/tab/jobs">工作</a></li>
+                         </c:if>><a style="color: black" href="/tab/jobs">即时问答咨询</a></li>
                     <li <c:if test="${tab.tabNameEn == 'deals'}">class="active"
                         </c:if>><a style="color: black" href="${pageContext.request.contextPath}/tomessage?delegatorID=6">消息列表</a></li>
 

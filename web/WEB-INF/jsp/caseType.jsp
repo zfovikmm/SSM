@@ -10,7 +10,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>电影后台管理系统</title>
+    <title>后台管理系统</title>
     <link rel="icon" type="image/png"
           href="/static/assets/i/favicon.png">
     <link rel="apple-touch-icon-precomposed"
@@ -239,6 +239,7 @@
 
                         </div>
                     </div>
+
                     <div class="am-u-sm-12 am-u-md-1">
                         <div class="am-btn-group am-btn-group-xs">
                             <label>
@@ -299,7 +300,7 @@
 
 <div id="light" class="white_content">
     <form action="${pageContext.request.contextPath}/addtype" method="post" id="f1" class="smart-green">
-        <label><span>电影类别:</span>
+        <label><span>问题类型:</span>
             <input id="name" type="text" name="type"  />
         </label>
         <br>

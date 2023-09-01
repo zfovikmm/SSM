@@ -48,7 +48,7 @@ a{
 <body>
 <footer class="footer">
     <div class="container">
-        Lhfly是一个认真而有趣的社区，不同的人在上面分享自己的见解
+        老百姓贴身免费的法律顾问
         <br/><br/><br/>
         <p>Designed by </span> lhf2018</p>
     </div>

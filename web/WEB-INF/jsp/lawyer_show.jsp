@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
   <meta name="Content-Type"  content="text/html;charset=utf-8">
-  <meta name="keywords" content="Lhfly,论坛,社区,程序员">
-  <title>Lhfly - 一个分享创造的开发者社区  </title>
+  <meta name="keywords" content="社区，法律，免费">
+  <title>zm法律社区</title>
   <link href="/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="/static/js/jquery-3.2.1.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
@@ -69,7 +69,7 @@
         <li class="list-group-item">
           <div style="height: 50px">
             <div style="float: left;width: 6%;margin-bottom: 5px">
-              <img width="50px" height="50px" src="/static/img/avatar/avatar.png" class="img-rounded">
+              <img width="50px" height="50px" src="/static/img/avatar/delegator_avatar.png" class="img-rounded">
             </div>
             <div style="width: 89%;float: left">
               <a style="color: black;font-weight: normal;"><p style="color: #c9302c;display: inline"></p>${message.title}</a><br/>

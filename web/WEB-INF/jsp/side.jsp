@@ -8,8 +8,8 @@
     <div class="panel panel-default" id="sidebar2" style="width: 100%;margin:5% 2% 1% 0%;">
         <div class="panel-heading" style="background:linear-gradient(#f1f1f1,#c4e3f3);text-align: center">
             <blockquote>
-                Lhfly
-                <small>一个分享创造的开发者社区</small>
+                zm
+                <small>一个免费的法律咨询社区</small>
             </blockquote>
         </div>
         <ul class="list-group" style="width: 100%">

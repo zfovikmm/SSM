@@ -30,26 +30,24 @@
 						class="am-icon-folder"></i> <span>律师管理</span> </a>
 				<ul class="tpl-left-nav-sub-menu" style="display: block">
 					<li>
-						<a href="/news/addnew.jsp"> <i
-								class="am-icon-angle-right"></i> <span>律师上传</span> </a>
-						<a href="${pageContext.request.contextPath}/allnews"> <i
+						<a href="${pageContext.request.contextPath}/listLawyer"> <i
 								class="am-icon-angle-right"></i> <span>律师信息管理</span> </a>
 					</li>
 				</ul>
 			</li>
-			<li class="tpl-left-nav-item">
-				<a href="javascript:;"
-				   class="nav-link tpl-left-nav-link-list active"> <i
-						class="am-icon-folder"></i> <span>个人设置</span> </a>
-				<ul class="tpl-left-nav-sub-menu" style="display: block">
-					<li>
-						<a href="/person/person_info.jsp"> <i
-								class="am-icon-angle-right"></i> <span>个人信息修改</span> </a>
-						<a href="/person/updatepwd.jsp"> <i class="am-icon-angle-right"></i>
-							<span>密码修改</span> </a>
-					</li>
-				</ul>
-			</li>
+<%--			<li class="tpl-left-nav-item">--%>
+<%--				<a href="javascript:;"--%>
+<%--				   class="nav-link tpl-left-nav-link-list active"> <i--%>
+<%--						class="am-icon-folder"></i> <span>个人设置</span> </a>--%>
+<%--				<ul class="tpl-left-nav-sub-menu" style="display: block">--%>
+<%--					<li>--%>
+<%--						<a href="/person/person_info.jsp"> <i--%>
+<%--								class="am-icon-angle-right"></i> <span>个人信息修改</span> </a>--%>
+<%--						<a href="/person/updatepwd.jsp"> <i class="am-icon-angle-right"></i>--%>
+<%--							<span>密码修改</span> </a>--%>
+<%--					</li>--%>
+<%--				</ul>--%>
+<%--			</li>--%>
 
 		</ul>
 	</div>

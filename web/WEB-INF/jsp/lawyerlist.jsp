@@ -39,7 +39,6 @@
             opacity:.80;
             filter: alpha(opacity=88);
         }
-
     </style>
     <style>
         .smart-green {
@@ -112,7 +111,7 @@
             $("#btn1").click(function () {
                 var tISDN = $("#tISDN").val();
                 if(tISDN==""){
-                    $(".errorMsg").text("新闻编号不可为空");
+                    $(".errorMsg").text("律所编号不可为空");
                     return false;}
                 return true;
             })
@@ -127,13 +126,15 @@
             var a=$("#tr"+id).children();
             //a[1]表示第二个单元格
             //$("#tr"+id).children().siblings().eq(1).text()表示选中'id'为id的tr的第二个单元格，将其变为可编辑状态
-             a[1].innerHTML="<td ><input type='text' id='input1"+id+"' value='"+$("#tr"+id).children().siblings().eq(1).text()+"'/></td>";
+            a[1].innerHTML="<td ><input type='text' id='input1"+id+"' value='"+$("#tr"+id).children().siblings().eq(1).text()+"'/></td>";
             a[2].innerHTML="<td ><input type='text' id='input2"+id+"' value='"+$("#tr"+id).children().siblings().eq(2).text()+"'/></td>";
             a[3].innerHTML="<td ><input type='text' id='input3"+id+"' value='"+$("#tr"+id).children().siblings().eq(3).text()+"'/></td>";
             a[4].innerHTML="<td ><input type='text' id='input4"+id+"' value='"+$("#tr"+id).children().siblings().eq(4).text()+"'/></td>";
             a[5].innerHTML="<td ><input type='text' id='input5"+id+"' value='"+$("#tr"+id).children().siblings().eq(5).text()+"'/></td>";
+            a[6].innerHTML="<td ><input type='text' id='input6"+id+"' value='"+$("#tr"+id).children().siblings().eq(6).text()+"'/></td>";
+            a[7].innerHTML="<td ><input type='text' id='input7"+id+"' value='"+$("#tr"+id).children().siblings().eq(7).text()+"'/></td>";
             //点击修改后将编辑改为保存和取消
-            a[6].innerHTML="" +
+            a[9].innerHTML="" +
                 "<td><div class='am-btn-toolbar'> <div class='am-btn-group am-btn-group-xs'>" +
                 "<button class='am-btn am-btn-default am-btn-xs am-text-secondary' type='button' onclick='save("+id+")'> " +
                 "<span class=\"am-icon-edit\"></span>保存 </button>" +
@@ -144,21 +145,24 @@
         //编辑保存操作
         function save(id) {//未定义是可能就是id重复了
 
-            var dename=$("#input1"+id).val();
-            var email=$("#input2"+id).val();
-            var phone=$("#input3"+id).val();
+            var name=$("#input1"+id).val();
+            var age=$("#input2"+id).val();
+            var contact=$("#input3"+id).val();
             var address=$("#input4"+id).val();
-            var sex=$("#input5"+id).val();
+            var lawFirm=$("#input5"+id).val();
+            var education=$("#input6"+id).val();
+            var specialization=$("#input7"+id).val();
+            //
 
-            if (dename == "") {
+            if (name == "") {
                 $(".errorMsg").text("姓名不可为空");
                 return false;
             }
-            if (email == "") {
-                $(".errorMsg").text("邮箱不可为空");
+            if (age == "") {
+                $(".errorMsg").text("年龄不可为空");
                 return false;
             }
-            if (phone == "") {
+            if (contact == "") {
                 $(".errorMsg").text("电话不可为空");
                 return false;
             }
@@ -166,18 +170,26 @@
                 $(".errorMsg").text("地址不可为空");
                 return false;
             }
-            if (sex == "") {
-                $(".errorMsg").text("性别不可为空");
+            if (lawFirm == "") {
+                $(".errorMsg").text("律所不可为空");
                 return false;
             }
-            window.location.href="${pageContext.request.contextPath}/upDele?delegatorId="+id+"&dename="+dename+"&email="+email+"&phone="+phone+"&address="+address+"&sex="+sex;
+            if (education == "") {
+                $(".errorMsg").text("学历不可为空");
+                return false;
+            }
+            if (specialization == "") {
+                $(".errorMsg").text("专业领域不可为空");
+                return false;
+            }
+            window.location.href="${pageContext.request.contextPath}/upLaw?lawyerId="+id+"&name="+name+"&age="+age+"&contact="+contact+"&address="+address+"&lawFirm="+lawFirm+"&education="+education+"&specialization="+specialization;
         }
 
         function back() {
-            window.location.href="${pageContext.request.contextPath}/alldele";
+            window.location.href="${pageContext.request.contextPath}/listLawyer";
         }
         function del(id) {
-            window.location.href="${pageContext.request.contextPath}/delGator?delegatorId="+id;
+            window.location.href="${pageContext.request.contextPath}/delLaw?lawyerId="+id;
         }
 
     </script>
@@ -256,15 +268,21 @@
                 <a href="#" class="am-icon-home">首页</a>
             </li>
             <li class="am-active">
-                委托人信息管理
+                律师信息管理
             </li>
         </ol>
         <div class="tpl-portlet-components">
             <div class="tpl-block">
+
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-md-1">
                         <div class="am-btn-group am-btn-group-xs">
-
+                            <form action="${pageContext.request.contextPath}/addLawyer">
+                                <button type="submit"
+                                        class="am-btn am-btn-default am-btn-success"  onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                                    <span class="am-icon-plus"></span> 新增
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="am-u-sm-12 am-u-md-3">
@@ -276,11 +294,14 @@
                         </div>
                     </div>
 
+
+
                     <div class="am-u-sm-12 am-u-md-3">
-                        <br>
-                        <form action=" ${pageContext.request.contextPath}/selectDele"  id="f2" method="post" >
+
+
+                        <form action=" ${pageContext.request.contextPath}/selectLawyer"  id="f2" method="post" >
                             <div class="am-input-group am-input-group-sm">
-                                <input type="text" name="dename" placeholder="请输入委托人姓名" id="tISDN" class="am-form-field">
+                                <input type="text" name="name" placeholder="请输入律师姓名" id="tISDN" class="am-form-field">
                                 <span class="am-input-group-btn">
                                     <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"
                                             type="submit" id="btn1" ></button> </span>
@@ -295,31 +316,37 @@
                             <tr>
                                 <th class="table-title">编号</th>
                                 <th class="table-title">姓名</th>
-                                <th class="table-title">邮箱</th>
+                                <th class="table-title">年龄</th>
                                 <th class="table-title">电话</th>
                                 <th class="table-title">地址</th>
-                                <th class="table-title">性别</th>
+                                <th class="table-title">所处律所</th>
+                                <th class="table-title">学历</th>
+                                <th class="table-title">专业领域</th>
+                                <th class="table-title">注册时间</th>
                                 <th class="table-set">操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${delegators}" var="dele" >
-                                <tr id="tr${dele.delegatorId}">
-                                    <td>${dele.delegatorId}</td>
-                                    <td>${dele.dename}</td>
-                                    <td>${dele.email}</td>
-                                    <td>${dele.phone}</td>
-                                    <td>${dele.address}</td>
-                                    <td>${dele.sex}</td>
+                            <c:forEach items="${lawyers}" var="law" >
+                                <tr id="tr${law.lawyerId}">
+                                    <td>${law.lawyerId}</td>
+                                    <td>${law.name}</td>
+                                    <td>${law.age}</td>
+                                    <td>${law.contact}</td>
+                                    <td>${law.address}</td>
+                                    <td>${law.lawFirm}</td>
+                                    <td>${law.education}</td>
+                                    <td>${law.specialization}</td>
+                                    <td>${law.registrationDate}</td>
                                     <td>
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
                                                 <button class="am-btn am-btn-default am-btn-xs am-text-secondary"
-                                                        type="button" onclick="editFile(${dele.delegatorId})">
+                                                        type="button" onclick="editFile(${law.lawyerId})">
                                                     <span class="am-icon-edit"></span> 编辑
                                                 </button>
                                                 <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"
-                                                        type="button" onclick="submitHand(${dele.delegatorId})">
+                                                        type="button" onclick="submitHand(${law.lawyerId})">
                                                     <span class="am-icon-trash-o"></span> 删除
                                                 </button>
                                             </div>
@@ -335,13 +362,13 @@
                         </table>
                     </div>
                     <c:if test="${nodePage>1}"><%--当前页面不是第一页显示上一页--%>
-                        <a href="${pageContext.servletContext.contextPath}/list?nodePage=${nodePage-1}">上一页</a>
+                        <a href="${pageContext.servletContext.contextPath}/listLawyer?nodePage=${nodePage-1}">上一页</a>
                     </c:if>
                     <c:forEach begin="1" end="${requestScope.allpage}" var="pagesize">
-                        <a href="${pageContext.servletContext.contextPath}/list?nodePage=${pagesize}">${pagesize}</a>
+                        <a href="${pageContext.servletContext.contextPath}/listLawyer?nodePage=${pagesize}">${pagesize}</a>
                     </c:forEach>
                     <c:if test="${requestScope.nodePage<requestScope.allpage}"><%--当前页面不是最后一页显示下一页--%>
-                        <a href="${pageContext.servletContext.contextPath}/list?nodePage=${nodePage+1}">下一页</a>
+                        <a href="${pageContext.servletContext.contextPath}/listLawyer?nodePage=${nodePage+1}">下一页</a>
                     </c:if>
                 </div>
             </div>
