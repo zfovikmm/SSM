@@ -28,9 +28,6 @@ public class AdminController {
     private LawyerServiceImpl lawyerService;
 
     @Autowired
-    private ConsulationServiceImpl consulationService;
-
-    @Autowired
     private AdministratorServiceImpl administratorService;
 
     @Autowired
@@ -72,10 +69,10 @@ public class AdminController {
             if (a != null) {
                 return "main";
             } else {
-                return "logno";
+                return "redirect:/index.jsp";
             }
         }else {
-            return "logno";
+            return "redirect:/index.jsp";
         }
     }
 
