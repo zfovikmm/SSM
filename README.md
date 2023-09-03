@@ -1,2 +1,6 @@
 # SSM
-基于SSM的在线法律咨询平台的设计与实现
+功能介绍
+
+1、登录功能
+
+[SSM/images/登录.png at main · zfovikmm/SSM (github.com)](https://github.com/zfovikmm/SSM/blob/main/images/登录.png)
