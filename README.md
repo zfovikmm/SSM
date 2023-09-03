@@ -11,11 +11,11 @@
 
 3、委托人界面
 
-![image](C:/Users/19080/AppData/Roaming/Typora/typora-user-images/委托人界面.png)
+![image](https://github.com/zfovikmm/SSM/blob/main/images/委托人界面.png)
 
 4、咨询界面
 
-
+![image](https://github.com/zfovikmm/SSM/blob/main/images/咨询界面.png)
 
 5、律师界面
 
