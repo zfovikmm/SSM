@@ -3,4 +3,4 @@
 
 1、登录功能
 
-[SSM/images/登录.png at main · zfovikmm/SSM (github.com)](https://github.com/zfovikmm/SSM/blob/main/images/登录.png)
+![image](https://github.com/zfovikmm/SSM/blob/main/images/登录.png)
